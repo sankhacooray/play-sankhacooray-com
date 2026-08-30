@@ -1,0 +1,16 @@
+{
+  "name": "play — Sankha Cooray",
+  "short_name": "play",
+  "description": "A lens on interaction for its own sake — creative-coding experiments, playful hardware, and small interfaces that exist to be enjoyed rather than to be useful.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#120814",
+  "background_color": "#120814",
+  "lang": "en",
+  "categories": ["entertainment", "games"],
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
