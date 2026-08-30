@@ -1,7 +1,7 @@
 {
-  "name": "play — Sankha Cooray",
+  "name": "play \u2014 Sankha Cooray",
   "short_name": "play",
-  "description": "A lens on interaction for its own sake — creative-coding experiments, playful hardware, and small interfaces that exist to be enjoyed rather than to be useful.",
+  "description": "A lens on interaction for its own sake \u2014 creative-coding experiments, playful hardware, and small interfaces that exist to be enjoyed rather than to be useful.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -9,8 +9,27 @@
   "theme_color": "#120814",
   "background_color": "#120814",
   "lang": "en",
-  "categories": ["entertainment", "games"],
+  "categories": [
+    "entertainment",
+    "games"
+  ],
   "icons": [
-    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" }
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
   ]
 }
