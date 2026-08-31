@@ -91,6 +91,7 @@ a { color: inherit; text-decoration: none; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; gap: 12px; transition: border-color .18s, background .18s; }
 .card:hover { border-color: var(--accent-dim); background: var(--surface2); }
+.card .thumb { width: 100%; aspect-ratio: 800 / 420; object-fit: cover; object-position: top center; border-radius: var(--radius-sm); border: 1px solid var(--border); display: block; margin-bottom: 4px; background: var(--surface2); }
 .card .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .card h3 { font-family: 'Instrument Serif', serif; font-size: 26px; font-weight: 400; color: var(--text); letter-spacing: -0.3px; }
 .card p { font-size: 15px; color: var(--text-dim); }
@@ -132,10 +133,12 @@ footer a:hover { color: var(--accent); }
   <div class="section-label">Selected projects</div>
   <div class="grid">
     <div class="card is-building">
+      <img class="thumb" loading="lazy" src="thumbs/shadow-play.jpg" alt="shadow-play preview">
       <div class="top"><h3>shadow-play</h3><span class="chip building">in the lab</span></div>
       <p>A creative-coding toy exploring light, shadow, and gesture in the browser.</p>
     </div>
     <div class="card is-building">
+      <img class="thumb" loading="lazy" src="thumbs/magic-bells.jpg" alt="magic-bells preview">
       <div class="top"><h3>magic-bells</h3><span class="chip building">in the lab</span></div>
       <p>A Unity application — interactive sound and motion as play.</p>
     </div>
