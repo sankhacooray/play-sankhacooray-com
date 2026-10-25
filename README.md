@@ -2,7 +2,7 @@
 
 **[play.sankhacooray.com](https://play.sankhacooray.com)** — the games & playful interaction hub in the
 sankhacooray.com network: Stakco rotating ring puzzles (web, Android, Galaxy Watch, floor tiles, walking),
-Clock Puzzles, iTiles floor-tile games, DartsAR augmented-reality darts and the Geodex city treasure hunt.
+iTiles floor-tile games, Kiwrious Play, DartsAR augmented-reality darts and the Geodex city treasure hunt.
 For game designers, HCI and toy/puzzle people. Creative-coding toys (Gyro Shapes, Magic Bells) live in sense / music.
 
 Served by a Cloudflare Worker (`play-sankhacooray`): static assets from `public/`, plus `src/worker.js`, whose

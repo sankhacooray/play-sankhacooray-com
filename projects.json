@@ -10,7 +10,7 @@
       "nav": "Puzzle design",
       "title": "Rotating ring puzzles",
       "lede": "Stacked rings that turn on their own: line them up to bring the picture back, on paper, a phone or a watch.",
-      "context": "Stakco · Clock Puzzles",
+      "context": "Stakco",
       "projects": [
         {
           "name": "Stakco Play",
@@ -19,7 +19,7 @@
             "web",
             "android"
           ],
-          "role": "co",
+          "role": "mine",
           "org": "Stakco",
           "thumb": "stakco-play.jpg",
           "url": "https://play.stakcos.com/",
@@ -59,7 +59,7 @@
           "plat": [
             "watch"
           ],
-          "role": "co",
+          "role": "mine",
           "org": "Stakco",
           "thumb": "stakco-watch.jpg",
           "years": "2024–2025",
@@ -80,42 +80,14 @@
               "repo": "stakco-watch-html5"
             }
           ]
-        },
-        {
-          "name": "Clock Puzzles",
-          "desc": "Multi-layer rotating puzzles that reveal artwork: play online free, or order a printed copy.",
-          "plat": [
-            "web"
-          ],
-          "org": "Clock Puzzles",
-          "thumb": "clockpuzzle.jpg",
-          "url": "https://clockpuzzle.com/",
-          "years": "2026",
-          "parts": [
-            {
-              "name": "Clock Puzzles",
-              "kind": "Shop and play site",
-              "repo": "clockpuzzle-com"
-            },
-            {
-              "name": "Orders API",
-              "kind": "Stripe checkout",
-              "repo": "api-clockpuzzle-com"
-            },
-            {
-              "name": "CDN",
-              "kind": "Artwork host",
-              "repo": "cdn-clockpuzzle-com"
-            }
-          ]
         }
       ]
     },
     {
       "id": "embodied",
       "nav": "Embodied play",
-      "title": "Games on the floor",
-      "lede": "Interactive floor tiles that light, sound and buzz: you play by stepping, tapping and shaking them.",
+      "title": "Games you play with your body",
+      "lede": "Floor tiles that light, sound and buzz under your feet, and science sensors that turn heartbeat, light and warmth into game moves.",
       "context": "iTiles · Stakco · Kiwrious",
       "projects": [
         {
@@ -147,7 +119,7 @@
           "plat": [
             "web"
           ],
-          "role": "co",
+          "role": "mine",
           "org": "Stakco",
           "thumb": "stakco-itiles.jpg",
           "url": "https://stakcos.com/itiles/play/",
@@ -160,11 +132,24 @@
           "plat": [
             "web"
           ],
-          "role": "co",
+          "role": "mine",
           "org": "Stakco",
           "thumb": "kiwrious-itiles.jpg",
           "url": "https://stakcos.com/kiwrious-itiles/",
           "years": "2025"
+        },
+        {
+          "name": "Kiwrious Play",
+          "desc": "Scratch for science: plug in a Kiwrious sensor and children build games that react to live heart rate, UV, humidity and more.",
+          "plat": [
+            "web"
+          ],
+          "role": "contrib",
+          "org": "Augmented Human Lab",
+          "thumb": "kiwrious-play.jpg",
+          "url": "https://play.kiwrious.com/",
+          "urlLabel": "Play",
+          "years": "2021–2026"
         }
       ]
     },
@@ -221,7 +206,7 @@
           "plat": [
             "web"
           ],
-          "role": "co",
+          "role": "mine",
           "org": "Stakco",
           "thumb": "stakco-walk.jpg",
           "url": "https://stakcos.com/walk/",
@@ -250,5 +235,5 @@
   ],
   "yearsNote": "From each project's git history (first to last commit). Stakco Play includes the Unity simulator from 2023; Stakco Watch runs from the first watch-face commits (Feb 2024) to the Galaxy Watch app (Oct 2025); DartsAR uses 2018–2020, the years the game was out (the site repo's 2026 commit only moved its domain); stakco-play-android and stakco-audio-html5 have no git history and fall inside the Stakco Play range.",
   "thumbsNote": "Geodex loads its current og:image live through the Worker (/api/og), over a screenshot until it arrives. The rest use screenshots of the live sites (800×420). Stakco Watch and Stakco iTiles are drawn from og/thumbs.html: the watch is the watch-face prototype, the iTiles page needs real tiles to show a puzzle. Clock Puzzles' og:image currently 404s, so it uses a screenshot.",
-  "cardsNote": "Cards show only things people use. Backends, earlier versions, prototypes and other platforms are listed as parts of their product (hover the parts chip). Clock Puzzles has no role chip: its repositories belong to the Clock Puzzles account and the role isn't recorded. Left out: Gyro Shapes (shadow-play-html5) and Magic Bells (compass-driven music box) are toys rather than games, so they belong in sense / music; Kiwrious Play (play.kiwrious.com) is block programming for children and sits in learn."
+  "cardsNote": "Cards show only things people use. Backends, earlier versions, prototypes and other platforms are listed as parts of their product (hover the parts chip). Stakco is Sankha's own (role mine). Clock Puzzles is left out at Sankha's request (2026-10-25). Left out: Gyro Shapes (shadow-play-html5) and Magic Bells (compass-driven music box) are toys rather than games, so they belong in sense / music. Kiwrious Play (play.kiwrious.com) also sits in learn."
 }

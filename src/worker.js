@@ -9,7 +9,6 @@
 
 const ALLOWED_HOSTS = new Set([
   "geodex.sankhacooray.com",
-  "clockpuzzle.com",
   "dartsar.app",
   "play.stakcos.com",
   "stakcos.com",
