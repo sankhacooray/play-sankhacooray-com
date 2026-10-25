@@ -1,0 +1,16 @@
+# play — hub site on a Cloudflare Worker: static assets, plus /api/og for live share images.
+# Deploy: python3 build.py && CLOUDFLARE_ACCOUNT_ID=9a1da48a0f61e7cebcba39517856d87e npx wrangler deploy
+name = "play-sankhacooray"
+main = "src/worker.js"
+compatibility_date = "2026-10-01"
+
+workers_dev = true
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+# Auto-provisions the DNS record in the sankhacooray.com zone.
+[[routes]]
+pattern = "play.sankhacooray.com"
+custom_domain = true

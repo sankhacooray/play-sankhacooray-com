@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>play — Sankha Cooray · games, puzzles & playful interaction</title>
+<meta name="description" content="Games and puzzles by Sankha Cooray: Stakco rotating ring puzzles, iTiles floor-tile games, DartsAR augmented-reality darts and the Geodex city treasure hunt.">
+<link rel="canonical" href="https://play.sankhacooray.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="play · Sankha Cooray">
+<meta property="og:title" content="play — Sankha Cooray · games, puzzles & playful interaction">
+<meta property="og:description" content="Games and puzzles by Sankha Cooray: Stakco rotating ring puzzles, iTiles floor-tile games, DartsAR augmented-reality darts and the Geodex city treasure hunt.">
+<meta property="og:url" content="https://play.sankhacooray.com/">
+<meta property="og:image" content="https://play.sankhacooray.com/og.png?v=1">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="play.sankhacooray.com: games, puzzles and playful interaction, with screenshots of Stakco Play, iTiles Games, DartsAR and Geodex">
+<meta property="og:locale" content="en_SG">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="play — Sankha Cooray · games, puzzles & playful interaction">
+<meta name="twitter:description" content="Games and puzzles by Sankha Cooray: Stakco rotating ring puzzles, iTiles floor-tile games, DartsAR augmented-reality darts and the Geodex city treasure hunt.">
+<meta name="twitter:image" content="https://play.sankhacooray.com/og.png?v=1">
+<meta name="twitter:image:alt" content="play.sankhacooray.com: games, puzzles and playful interaction, with screenshots of Stakco Play, iTiles Games, DartsAR and Geodex">
+
+<link rel="icon" type="image/svg+xml" href="/icon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#1e1530">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="play">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>(function(){try{var t=localStorage.getItem("sc-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<style>
+/* Arcade palette: night-plum app bar, violet accent, lavender paper, coin-yellow mark, coral hit */
+:root{
+  --bg:#f5f2fa; --surface:#ffffff; --surface2:#ebe5f5; --line:#ddd4ec;
+  --text:#1c1530; --dim:#4a4160; --muted:#7d7591;
+  --accent:#6a3fd1; --accent-hi:#7c52e3; --accent-soft:#6a3fd114; --mark:#ffc93c; --hot:#ff5d73;
+  --bar:#1e1530; --bar-text:#f2eefa; --bar-dim:#b4a9cc;
+  --cta-text:#ffffff; --card-hover:#f5f1fd; --android:#2e8b57;
+  --tile:#e2daf0; --tile-edge:#c9bde0; --watch:#2a2140; --strap:#3b3058; --bezel:#8d82a8; --ink:#1c1530;
+  --display:"Bricolage Grotesque",system-ui,sans-serif; --sans:"DM Sans",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --page-bg:#f5f2fa; --maxw:clamp(1180px,140vh,1560px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#100c1a; --surface:#181226; --surface2:#211a33; --line:#2e2545;
+  --text:#ece8f6; --dim:#bdb4d3; --muted:#8e85a6;
+  --accent:#a487ff; --accent-hi:#b9a2ff; --accent-soft:#a487ff1f; --mark:#ffc93c; --hot:#ff6b80;
+  --bar:#0a0712; --bar-text:#ece8f6; --bar-dim:#9a90b3;
+  --cta-text:#140c26; --card-hover:#1f1830; --android:#5fcf8f;
+  --tile:#2a2240; --tile-edge:#3a3058; --watch:#0c0916; --strap:#2a2142; --bezel:#6d6388; --ink:#ece8f6;
+  --page-bg:#100c1a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#100c1a; --surface:#181226; --surface2:#211a33; --line:#2e2545;
+  --text:#ece8f6; --dim:#bdb4d3; --muted:#8e85a6;
+  --accent:#a487ff; --accent-hi:#b9a2ff; --accent-soft:#a487ff1f; --mark:#ffc93c; --hot:#ff6b80;
+  --bar:#0a0712; --bar-text:#ece8f6; --bar-dim:#9a90b3;
+  --cta-text:#140c26; --card-hover:#1f1830; --android:#5fcf8f;
+  --tile:#2a2240; --tile-edge:#3a3058; --watch:#0c0916; --strap:#2a2142; --bezel:#6d6388; --ink:#ece8f6;
+  --page-bg:#100c1a; color-scheme:dark}
+
+/* rule 14: body is the scroller, no bounce, no white edge */
+html{height:100%;overflow:hidden;background:var(--page-bg);overscroll-behavior:none}
+body{height:100%;margin:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:none;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+
+/* ambient particle field behind everything (pointer-events off) */
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:block}
+main{position:relative;z-index:1}
+/* app bar (rule 7: no bottom border; rule 19: full width) */
+.topbar{position:sticky;top:0;z-index:20;background:var(--bar);color:var(--bar-text);padding-top:env(safe-area-inset-top,0px)}
+.topbar .wrap{max-width:none;display:flex;align-items:center;gap:18px;height:60px;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--bar-text)}
+/* hub chip: a coin-yellow arcade button */
+.hubchip{font-family:var(--display);font-weight:800;font-size:18px;line-height:1;padding:7px 14px 8px;border-radius:999px;background:var(--mark);color:#1e1530;letter-spacing:.01em;box-shadow:inset 0 -3px 0 #00000026}
+.brand .lbl{font-size:14.5px;font-weight:500;color:var(--bar-text)}
+.chev{width:18px;height:18px;color:var(--bar-dim)}
+.nav{display:flex;gap:4px;margin-left:2px}
+.nav a{display:inline-flex;align-items:center;gap:7px;color:var(--bar-dim);text-decoration:none;font-size:14px;padding:6px 10px;border-radius:999px;transition:background-color .25s ease,color .25s ease}
+.nav a:hover{color:var(--bar-text);background:#ffffff14}
+.nav a[aria-current="true"]{color:var(--bar-text);background:#ffffff1f;font-weight:600}
+.spacer{flex:1}
+.iconbtn{all:unset;cursor:pointer;width:36px;height:36px;border-radius:999px;display:grid;place-items:center;color:var(--bar-dim)}
+.iconbtn:hover{color:var(--bar-text);background:#ffffff14}
+/* the toggle shows the theme it switches TO: moon on light, sun on dark */
+.ico-sun{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ico-sun{display:block}:root:not([data-theme="light"]) .ico-moon{display:none}}
+:root[data-theme="dark"] .ico-sun{display:block}:root[data-theme="dark"] .ico-moon{display:none}
+.iconbtn:focus-visible,.cta:focus-visible,.card a:focus-visible,.nav a:focus-visible{outline:2px solid var(--mark);outline-offset:2px}
+/* rule 10/12: one primary CTA, theme colour, named for the task */
+.cta{display:inline-flex;align-items:center;background:var(--accent);color:var(--cta-text);text-decoration:none;font-weight:600;font-size:14px;padding:9px 18px;border-radius:999px;white-space:nowrap;transition:background .15s,box-shadow .15s}
+.cta:hover{background:var(--accent-hi);box-shadow:0 0 0 4px var(--accent-soft),0 6px 20px -6px var(--accent)}
+
+/* groups (rules 1, 4, 5) */
+.group{box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;padding-block:clamp(18px,3.4vh,48px);scroll-margin-top:var(--bar-h,60px)}
+.group > .wrap{width:100%;box-sizing:border-box}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(64px,13vh,128px);line-height:.92;margin:.1em 0 .06em;letter-spacing:-.04em}
+h1 .dot{color:var(--accent)}
+.sub{text-wrap:balance;font-family:var(--display);font-weight:500;font-size:clamp(24px,3.9vh,36px);line-height:1.15;margin:0;color:var(--dim);letter-spacing:-.01em}
+.lede{font-size:clamp(16px,2.25vh,19px);color:var(--dim);max-width:56ch;margin:clamp(12px,2.2vh,22px) 0 0}
+.role-line{font-size:14.5px;color:var(--muted);max-width:58ch;margin-top:12px}
+.role-line b{color:var(--text);font-weight:600}
+
+.hero > *{min-width:0}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:center}
+/* hero illustration: the play loop, a move in and feedback out (rules 15, 16) */
+.bench{display:block;width:100%;height:auto;max-height:calc(100vh - 60px - 180px);margin-inline:auto}
+.bench .tile{fill:var(--tile)}
+.bench .edge{fill:var(--tile-edge)}
+.bench .foot{fill:var(--ink);opacity:.78}
+.bench .strap{fill:var(--strap)}
+.bench .case{fill:var(--watch)}
+.bench .bezel{fill:none;stroke:var(--bezel);stroke-width:9;stroke-dasharray:2 9.6}
+.bench .turn{fill:none;stroke:var(--mark);stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
+.bench .wave{fill:none;stroke:var(--hot);stroke-width:3;stroke-linecap:round;opacity:.8}
+.bench .chiptxt{font-family:var(--mono);font-size:12.5px;fill:var(--text)}
+.bench .chipbg{fill:var(--surface);stroke:var(--line);stroke-width:1}
+.bench .shadow{fill:#00000026}
+/* rule 6/16: the play loop, one line */
+.strip{display:flex;flex-wrap:nowrap;align-items:stretch;gap:8px;margin-top:clamp(12px,2.4vh,24px)}
+.step{flex:1 1 auto;min-width:max-content;justify-content:center;display:flex;align-items:center;gap:8px;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);border-radius:999px;padding:7px 12px;font-size:13.5px;white-space:nowrap}
+.step svg{width:16px;height:16px;flex:none;color:var(--accent)}
+.arrow{align-self:center;color:var(--muted);flex:none}
+.strip-cap{font-size:12.5px;color:var(--muted);margin-top:6px}
+
+.ghead{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 24px;align-items:end;margin-bottom:clamp(14px,2.6vh,26px)}
+.ghead h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,4.6vh,42px);line-height:1.05;margin:0;letter-spacing:-.02em}
+.ghead p{text-wrap:pretty;margin:6px 0 0;color:var(--dim);max-width:64ch;font-size:clamp(15px,2.1vh,17.5px)}
+.ctx{font-family:var(--mono);font-size:12.5px;color:var(--muted);white-space:nowrap}
+
+.cards{display:grid;grid-template-columns:repeat(var(--n,4),minmax(0,1fr));gap:16px}
+/* parts: a product's components (backends, libraries, other platforms), listed on hover or tap */
+.card{position:relative;display:flex;flex-direction:column;background:var(--surface);border-radius:14px;overflow:hidden;box-shadow:0 1px 2px #0000000d,0 10px 28px -20px #1e153066,inset 0 0 0 1px var(--line);transition:background-color .2s}
+.card:hover{background:var(--card-hover)}
+.parts{all:unset;display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--dim);padding:2px 9px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);cursor:help;white-space:nowrap}
+.parts svg{width:13px;height:13px;color:var(--accent)}
+.parts:focus-visible{outline:2px solid var(--mark);outline-offset:2px}
+.pop{position:absolute;top:0;left:0;right:0;aspect-ratio:1200/630;z-index:5;display:flex;flex-direction:column;justify-content:center;padding:10px 14px;box-sizing:border-box;background:color-mix(in srgb,var(--surface) 62%,transparent);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility 0s linear .3s;pointer-events:none;white-space:normal}
+.parts:hover + .pop,.parts:focus + .pop,.parts.on + .pop{opacity:1;visibility:visible;transition:opacity .3s ease .25s,visibility 0s linear .25s}
+.pop b{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:6px}
+.pop ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px}
+.pop li{font-size:13px;line-height:1.25;color:var(--text);font-weight:500}
+.pop li i{display:block;font-style:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pop li span{display:block;font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pop code{font-family:var(--mono);font-size:10.5px;color:var(--accent);margin-left:4px}
+.art{aspect-ratio:1200/630;background:var(--surface2);position:relative;overflow:hidden}
+.art img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+.art.fallback{display:grid;place-items:center;background:radial-gradient(120% 90% at 20% 0%,var(--accent-soft),transparent 60%),linear-gradient(140deg,var(--surface2),var(--bg))}
+.art.fallback svg{width:clamp(44px,8vh,72px);height:auto;color:var(--accent);opacity:.55;transition:opacity .45s ease}
+.art.fallback .live-og{position:absolute;inset:0;opacity:0;transition:opacity .45s ease}
+.art.fallback.loaded .live-og{opacity:1}
+.art.fallback.loaded svg{opacity:0}
+.art.fallback.shot{background:var(--surface2)}
+.yrs{position:absolute;top:10px;left:10px;z-index:1;font-family:var(--mono);font-size:11.5px;font-weight:500;padding:3px 9px;border-radius:999px;background:color-mix(in srgb,var(--bar) 82%,transparent);color:var(--bar-text);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.art.blank{display:grid;place-items:center;background:linear-gradient(140deg,var(--accent-soft),transparent 70%),var(--surface2)}
+.art.blank svg{width:clamp(44px,8vh,72px);height:auto;color:var(--accent);opacity:.75}
+.cbody{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.ctop{display:flex;align-items:center;gap:8px;min-height:24px}
+.card h3{margin:0;font-family:var(--display);font-size:16.5px;font-weight:600;line-height:1.25;letter-spacing:-.005em}
+.role{margin-left:auto;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.role.mine{background:var(--accent);color:var(--cta-text)}
+.role.co{background:var(--accent-soft);color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.role.contrib{background:var(--surface2);color:var(--dim)}
+.card p{margin:0;color:var(--dim);font-size:14.5px;line-height:1.5}
+.cfoot{margin-top:auto;display:flex;align-items:center;gap:8px;min-height:24px;font-size:12.5px;color:var(--muted)}
+.plats{display:inline-flex;gap:4px}
+.pi{width:14px;height:14px}
+.pi-android{color:var(--android)}.pi-web{color:var(--accent)}.pi-ios{color:var(--text)}.pi-watch{color:var(--hot)}
+.org{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
+.open{margin-left:auto;font-weight:600;color:var(--accent);text-decoration:none;white-space:nowrap}
+.open:hover{text-decoration:underline}
+
+/* rules 5, 18: footer, one line, pinned to the bottom of the last screen */
+.last{justify-content:flex-start}
+.last > .wrap:first-child{margin-top:auto}
+.footer{margin-top:auto;padding-top:clamp(18px,4vh,40px);padding-bottom:12px}
+.footer .wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 14px;font-size:13.5px;color:var(--muted)}
+.footer a{text-decoration:none;color:var(--dim)}
+.footer a:hover{color:var(--accent)}
+.info{all:unset;cursor:help;width:20px;height:20px;border-radius:50%;display:inline-grid;place-items:center;font-size:12px;box-shadow:inset 0 0 0 1px var(--line);color:var(--dim);position:relative;z-index:41}
+.glass{position:fixed;inset:0;z-index:40;display:grid;place-items:center;background:color-mix(in srgb,var(--bg) 55%,transparent);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s;pointer-events:none;padding:24px}
+.glass.on{opacity:1;visibility:visible;transition:opacity .45s ease,visibility 0s}
+.glass .msg{max-width:52ch;font-size:17px;line-height:1.6;color:var(--text);text-align:left}
+.glass .msg b{font-weight:600}
+
+@media (max-width:1100px){.nav,.brand .lbl,.chev{display:none}}
+@media (max-width:900px){
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .bench{max-height:none}
+  .ghead{grid-template-columns:minmax(0,1fr)}
+  .ctx{white-space:normal}
+  .cards{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+  .strip{overflow-x:auto;scrollbar-width:none}
+  .strip::-webkit-scrollbar{display:none}
+  .step{flex:0 0 auto}
+}
+@media (max-width:520px){
+  .cta .long{display:none}
+  .footer .wrap{flex-wrap:nowrap;gap:8px;font-size:12px;white-space:nowrap}
+}
+@media (max-width:400px){
+  .footer .hide-s{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="/" aria-label="Play, research topics"><span class="hubchip">Play</span><span class="lbl">Research topics</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l6 6-6 6M13 6l6 6-6 6"/></svg></a>
+  <nav class="nav" aria-label="Sections"><a href="#puzzles">Puzzle design</a><a href="#embodied">Embodied play</a><a href="#pervasive">Pervasive games</a></nav>
+  <div class="spacer"></div>
+  <button class="iconbtn" id="theme-toggle" type="button" aria-label="Switch theme" title="Switch theme"><svg class="ico-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg><svg class="ico-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button>
+  <a class="cta" href="https://sankhacooray.com/#contact"><span>Collaborate<span class="long"> on a game</span></span></a>
+</div></header>
+
+<main id="home">
+  <section class="group" data-solo id="top"><div class="wrap hero">
+    <div>
+      <div class="eyebrow">A research hub by Sankha Cooray</div>
+      <h1>play<span class="dot">.</span></h1>
+      <p class="sub">Games, puzzles &amp; playful interaction</p>
+      <p class="lede">Games you play with your hands, your feet and the world around you: ring puzzles you turn on paper, a phone or a watch, floor tiles that light up underfoot, darts in augmented reality, and art hidden at real places in a city.</p>
+      <p class="role-line">DartsAR and Geodex are <b>mine</b>. Stakco is <b>co-owned</b>. The iTiles games are a <b>contribution</b> to the Augmented Human Lab.</p>
+    </div>
+    <div>
+      <svg class="bench" viewBox="0 0 600 400" role="img" aria-labelledby="bench-t">
+        <title id="bench-t">A three by three floor of game tiles with a footprint on the lit middle tile, beside a smartwatch whose bezel turns the rings of a puzzle that is not yet lined up.</title>
+        <defs><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter></defs>
+        <!-- floor tiles: step on one and it answers with light and sound -->
+        <g transform="translate(30 92)">
+          <rect x="76" y="0" width="66" height="66" rx="12" fill="var(--hot)" opacity=".55" filter="url(#glow)"/>
+          <rect x="76" y="76" width="66" height="66" rx="12" fill="var(--mark)" opacity=".75" filter="url(#glow)"/>
+          <rect x="152" y="152" width="66" height="66" rx="12" fill="#8b6cff" opacity=".55" filter="url(#glow)"/>
+          <g class="edge"><rect y="5" width="66" height="66" rx="12"/><rect x="76" y="5" width="66" height="66" rx="12"/><rect x="152" y="5" width="66" height="66" rx="12"/><rect y="81" width="66" height="66" rx="12"/><rect x="76" y="81" width="66" height="66" rx="12"/><rect x="152" y="81" width="66" height="66" rx="12"/><rect y="157" width="66" height="66" rx="12"/><rect x="76" y="157" width="66" height="66" rx="12"/><rect x="152" y="157" width="66" height="66" rx="12"/></g>
+          <g class="tile"><rect width="66" height="66" rx="12"/><rect x="152" width="66" height="66" rx="12"/><rect y="76" width="66" height="66" rx="12"/><rect x="152" y="76" width="66" height="66" rx="12"/><rect y="152" width="66" height="66" rx="12"/><rect x="76" y="152" width="66" height="66" rx="12"/></g>
+          <rect x="76" width="66" height="66" rx="12" fill="var(--hot)"/>
+          <rect x="76" y="76" width="66" height="66" rx="12" fill="var(--mark)"/>
+          <rect x="152" y="152" width="66" height="66" rx="12" fill="#8b6cff"/>
+          <!-- a footprint on the yellow tile -->
+          <g class="foot" transform="rotate(-14 109 110)"><path d="M109 94c7 0 11 6 11 15 0 7-3 10-3 16 0 5-3 9-8 9s-8-4-8-9c0-6-3-9-3-16 0-9 4-15 11-15z"/><circle cx="100.5" cy="88" r="3.2"/><circle cx="106.5" cy="85" r="3.4"/><circle cx="112.8" cy="85.4" r="3"/><circle cx="118" cy="88.4" r="2.6"/><circle cx="121.6" cy="93" r="2.2"/></g>
+          <!-- the tile answers: sound -->
+          <path class="wave" d="M151 92a26 26 0 0 1 0 34M159 84a38 38 0 0 1 0 50" transform="translate(-6 0)"/>
+        </g>
+        <!-- smartwatch: turning the bezel turns a ring of the puzzle -->
+        <rect class="strap" x="402" y="48" width="76" height="304" rx="18"/>
+        <circle class="case" cx="440" cy="200" r="114"/>
+        <circle class="bezel" cx="440" cy="200" r="103"/>
+        <g transform="translate(440 200)">
+          <circle r="90" fill="#6a3fd1"/>
+          <g transform="rotate(34)"><path d="M0-90A90 90 0 0 1 90 0L0 0z" fill="#ff5d73"/><path d="M0 90A90 90 0 0 1-90 0L0 0z" fill="#ffc93c"/></g>
+          <circle r="68" fill="#2a2140"/>
+          <g transform="rotate(-28)"><path d="M0-68A68 68 0 0 1 68 0L0 0z" fill="#ff5d73"/><path d="M0 68A68 68 0 0 1-68 0L0 0z" fill="#ffc93c"/></g>
+          <circle r="46" fill="#f5f2fa"/>
+          <g transform="rotate(64)"><path d="M0-46A46 46 0 0 1 46 0L0 0z" fill="#6a3fd1"/><path d="M0 46A46 46 0 0 1-46 0L0 0z" fill="#ff5d73"/></g>
+          <circle r="24" fill="#2a2140"/>
+          <g transform="rotate(-52)"><path d="M0-24A24 24 0 0 1 24 0L0 0z" fill="#ffc93c"/><path d="M0 24A24 24 0 0 1-24 0L0 0z" fill="#2ec4b6"/></g>
+          <circle r="7" fill="#f5f2fa"/>
+        </g>
+        <!-- turn arrow around the bezel -->
+        <path class="turn" d="M504 82A132 132 0 0 1 569 177"/>
+        <path class="turn" d="M558 166l11 13 11-14"/>
+        <!-- chips: same size, clear of everything -->
+        <g transform="translate(39 362)"><rect class="chipbg" width="200" height="28" rx="14"/><rect x="13" y="7" width="14" height="14" rx="4" fill="var(--mark)"/><text class="chiptxt" x="36" y="18.5">Step: the tile sings</text></g>
+        <g transform="translate(355 362)"><rect class="chipbg" width="170" height="28" rx="14"/><circle cx="20" cy="14" r="6" fill="none" stroke="var(--accent)" stroke-width="2"/><circle cx="20" cy="14" r="2" fill="var(--accent)"/><text class="chiptxt" x="34" y="18.5">Turn: rings align</text></g>
+      </svg>
+      <div class="strip" aria-label="The play loop: your move, the rule, feedback, the next round">
+        <div class="step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11V6a1.5 1.5 0 013 0v4M10 10V4.5a1.5 1.5 0 013 0V10M13 10V5.5a1.5 1.5 0 013 0V11M16 11V8a1.5 1.5 0 013 0v6a7 7 0 01-7 7h-1a6 6 0 01-5-2.7L3.5 14a1.5 1.5 0 012.5-1.6L7 14"/></svg><span>Your move</span></div>
+        <span class="arrow">→</span>
+        <div class="step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8.5 8.5h.01M15.5 15.5h.01M12 12h.01M15.5 8.5h.01M8.5 15.5h.01" stroke-width="2.6" stroke-linecap="round"/></svg><span>The rule</span></div>
+        <span class="arrow">→</span>
+        <div class="step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="2.5"/></svg><span>Light, sound, buzz</span></div>
+        <span class="arrow">→</span>
+        <div class="step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 11-2.3-5.7M20 4v4h-4"/></svg><span>Next round</span></div>
+      </div>
+      <div class="strip-cap">The loop every game here is built on</div>
+    </div>
+  </div></section>
+
+  <section class="group" id="puzzles"><div class="wrap">
+    <div class="ghead"><div><h2>Rotating ring puzzles</h2><p>Stacked rings that turn on their own: line them up to bring the picture back, on paper, a phone or a watch.</p></div><div class="ctx">Stakco · Clock Puzzles</div></div>
+    <div class="cards" style="--n:3"><article class="card"><div class="art"><span class="yrs" title="Active years, from the project's commit history">2023–2026</span><img src="/thumbs/stakco-play.jpg" alt="Stakco Play" loading="lazy" width="800" height="420"></div><div class="cbody"><div class="ctop"><h3>Stakco Play</h3><span class="role co">Co-owned</span></div><p>Daily ring puzzles in the browser and on Android: drag to turn a layer, double-tap to switch, beat the clock.</p><div class="cfoot"><span class="plats"><svg class="pi pi-web" viewBox="0 0 16 16" role="img" aria-label="Web"><title>Web</title><g fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c1.7 1.8 2.5 3.8 2.5 6S9.7 12.2 8 14M8 2C6.3 3.8 5.5 5.8 5.5 8s.8 4.2 2.5 6"/></g></svg><svg class="pi pi-android" viewBox="0 0 16 16" role="img" aria-label="Android"><title>Android</title><path fill="currentColor" d="M5.2 2.1a.4.4 0 01.55.13l.7 1.12A5 5 0 018 3.1c.55 0 1.07.09 1.55.25l.7-1.12a.4.4 0 11.68.42l-.66 1.06A4.4 4.4 0 0112.5 7H3.5a4.4 4.4 0 012.23-3.29l-.66-1.06a.4.4 0 01.13-.55zM6 5.4a.55.55 0 100 1.1.55.55 0 000-1.1zm4 0a.55.55 0 100 1.1.55.55 0 000-1.1zM3.5 8h9v4.5a1 1 0 01-1 1h-7a1 1 0 01-1-1V8z"/></svg></span><span class="org">Stakco</span><button class="parts" type="button" aria-label="Parts: Stakco Play, Stakco Play for Android, Stakco simulator, Audio puzzle, Stakco launcher"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>5 parts</button><div class="pop" role="tooltip"><b>Built from</b><ul><li><i>Stakco Play <code>stakco-play-html5</code></i><span>Web app, play.stakcos.com</span></li><li><i>Stakco Play for Android <code>stakco-play-android</code></i><span>Native Android app</span></li><li><i>Stakco simulator <code>stakco-simulator-unity</code></i><span>First version, Unity WebGL, 2023–2025</span></li><li><i>Audio puzzle <code>stakco-audio-html5</code></i><span>Prototype: turn waveforms into sync</span></li><li><i>Stakco launcher <code>stakco-launcher-html5</code></i><span>Home for every Stakco app</span></li></ul></div><a class="open" href="https://play.stakcos.com/" target="_blank" rel="noopener">Play</a></div></div></article><article class="card"><div class="art"><span class="yrs" title="Active years, from the project's commit history">2024–2025</span><img src="/thumbs/stakco-watch.jpg" alt="Stakco Watch" loading="lazy" width="800" height="420"></div><div class="cbody"><div class="ctop"><h3>Stakco Watch</h3><span class="role co">Co-owned</span></div><p>Ring puzzles on the wrist: turn the Galaxy Watch bezel to rotate a layer until the face lines up.</p><div class="cfoot"><span class="plats"><svg class="pi pi-watch" viewBox="0 0 16 16" role="img" aria-label="Smartwatch"><title>Smartwatch</title><g fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="4" width="8" height="8" rx="2.2"/><path d="M5.8 4l.6-2.5h3.2l.6 2.5M5.8 12l.6 2.5h3.2l.6-2.5M12 7v2"/></g></svg></span><span class="org">Stakco</span><button class="parts" type="button" aria-label="Parts: Stakco for Galaxy Watch, Stakco watch faces, Watch-face simulator"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>3 parts</button><div class="pop" role="tooltip"><b>Built from</b><ul><li><i>Stakco for Galaxy Watch <code>stakco-play-galaxy</code></i><span>Wear OS app, bezel control</span></li><li><i>Stakco watch faces <code>stakco-watch-unity</code></i><span>Unity scenes and Galaxy Watch build</span></li><li><i>Watch-face simulator <code>stakco-watch-html5</code></i><span>Web prototype</span></li></ul></div></div></div></article><article class="card"><div class="art"><span class="yrs" title="Active years, from the project's commit history">2026</span><img src="/thumbs/clockpuzzle.jpg" alt="Clock Puzzles" loading="lazy" width="800" height="420"></div><div class="cbody"><div class="ctop"><h3>Clock Puzzles</h3></div><p>Multi-layer rotating puzzles that reveal artwork: play online free, or order a printed copy.</p><div class="cfoot"><span class="plats"><svg class="pi pi-web" viewBox="0 0 16 16" role="img" aria-label="Web"><title>Web</title><g fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c1.7 1.8 2.5 3.8 2.5 6S9.7 12.2 8 14M8 2C6.3 3.8 5.5 5.8 5.5 8s.8 4.2 2.5 6"/></g></svg></span><span class="org">Clock Puzzles</span><button class="parts" type="button" aria-label="Parts: Clock Puzzles, Orders API, CDN"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>3 parts</button><div class="pop" role="tooltip"><b>Built from</b><ul><li><i>Clock Puzzles <code>clockpuzzle-com</code></i><span>Shop and play site</span></li><li><i>Orders API <code>api-clockpuzzle-com</code></i><span>Stripe checkout</span></li><li><i>CDN <code>cdn-clockpuzzle-com</code></i><span>Artwork host</span></li></ul></div><a class="open" href="https://clockpuzzle.com/" target="_blank" rel="noopener">Open</a></div></div></article></div>
+  </div>
+  </section>
+  <section class="group" id="embodied"><div class="wrap">
+    <div class="ghead"><div><h2>Games on the floor</h2><p>Interactive floor tiles that light, sound and buzz: you play by stepping, tapping and shaking them.</p></div><div class="ctx">iTiles · Stakco · Kiwrious</div></div>
+    <div class="cards" style="--n:3"><article class="card"><div class="art"><span class="yrs" title="Active years, from the project's commit history">2023–2026</span><img src="/thumbs/itiles-games.jpg" alt="iTiles Games" loading="lazy" width="800" height="420"></div><div class="cbody"><div class="ctop"><h3>iTiles Games</h3><span class="role contrib">Contributed</span></div><p>Memory, Chasing Lights and Music Orchestration for the iTiles floor tiles, in Unity and now the browser.</p><div class="cfoot"><span class="plats"><svg class="pi pi-web" viewBox="0 0 16 16" role="img" aria-label="Web"><title>Web</title><g fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c1.7 1.8 2.5 3.8 2.5 6S9.7 12.2 8 14M8 2C6.3 3.8 5.5 5.8 5.5 8s.8 4.2 2.5 6"/></g></svg></span><span class="org">Augmented Human Lab</span><button class="parts" type="button" aria-label="Parts: iTiles app, iTiles Games for the web"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>2 parts</button><div class="pop" role="tooltip"><b>Built from</b><ul><li><i>iTiles app <code>itiles-app-unity</code></i><span>Original Unity games app, 2023–2024</span></li><li><i>iTiles Games for the web <code>itiles-app-html5</code></i><span>Browser port, Web Bluetooth</span></li></ul></div></div></div></article><article class="card"><div class="art"><span class="yrs" title="Active years, from the project's commit history">2025</span><img src="/thumbs/stakco-itiles.jpg" alt="Stakco iTiles" loading="lazy" width="800" height="420"></div><div class="cbody"><div class="ctop"><h3>Stakco iTiles</h3><span class="role co">Co-owned</span></div><p>A Stakco ring puzzle you solve on foot: each tile you touch picks a layer or turns it.</p><div class="cfoot"><span class="plats"><svg class="pi pi-web" viewBox="0 0 16 16" role="img" aria-label="Web"><title>Web</title><g fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c1.7 1.8 2.5 3.8 2.5 6S9.7 12.2 8 14M8 2C6.3 3.8 5.5 5.8 5.5 8s.8 4.2 2.5 6"/></g></svg></span><span class="org">Stakco</span><a class="open" href="https://stakcos.com/itiles/play/" target="_blank" rel="noopener">Play</a></div></div></article><article class="card"><div class="art"><span class="yrs" title="Active years, from the project's commit history">2025</span><img src="/thumbs/kiwrious-itiles.jpg" alt="Kiwrious + iTiles" loading="lazy" width="800" height="420"></div><div class="cbody"><div class="ctop"><h3>Kiwrious + iTiles</h3><span class="role co">Co-owned</span></div><p>Science sensors drive the tiles: heart-rate challenges, UV alerts and temperature colour maps.</p><div class="cfoot"><span class="plats"><svg class="pi pi-web" viewBox="0 0 16 16" role="img" aria-label="Web"><title>Web</title><g fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c1.7 1.8 2.5 3.8 2.5 6S9.7 12.2 8 14M8 2C6.3 3.8 5.5 5.8 5.5 8s.8 4.2 2.5 6"/></g></svg></span><span class="org">Stakco</span><a class="open" href="https://stakcos.com/kiwrious-itiles/" target="_blank" rel="noopener">Open</a></div></div></article></div>
+  </div>
+  </section>
+  <section class="group last" id="pervasive"><div class="wrap">
+    <div class="ghead"><div><h2>Games in the world around you</h2><p>Play that leaves the screen: a dartboard in your room, art hidden at real places, and puzzles you turn by walking.</p></div><div class="ctx">DartsAR · Geodex · Stakco</div></div>
+    <div class="cards" style="--n:3"><article class="card"><div class="art"><span class="yrs" title="Active years, from the project's commit history">2018–2020</span><img src="/thumbs/dartsar.jpg" alt="DartsAR" loading="lazy" width="800" height="420"></div><div class="cbody"><div class="ctop"><h3>DartsAR</h3><span class="role mine">Mine</span></div><p>Augmented-reality darts for iPhone and Android: a virtual board in your room, multiplayer, leg by leg.</p><div class="cfoot"><span class="plats"><svg class="pi pi-ios" viewBox="0 0 16 16" role="img" aria-label="iPhone"><title>iPhone</title><path fill="currentColor" d="M11.2 8.5c0-1.5 1.2-2.2 1.3-2.3-.7-1-1.8-1.2-2.2-1.2-.9-.1-1.8.6-2.3.6s-1.2-.5-2-.5c-1 0-2 .6-2.5 1.6-1.1 1.9-.3 4.6.8 6.1.5.7 1.1 1.6 1.9 1.5.8 0 1-.5 2-.5s1.2.5 2 .5 1.3-.8 1.8-1.5c.6-.8.8-1.6.8-1.7 0 0-1.6-.6-1.6-2.6zM9.7 4c.4-.5.7-1.2.6-1.9-.6 0-1.4.4-1.8.9-.4.4-.7 1.1-.6 1.8.7.1 1.4-.3 1.8-.8z"/></svg><svg class="pi pi-android" viewBox="0 0 16 16" role="img" aria-label="Android"><title>Android</title><path fill="currentColor" d="M5.2 2.1a.4.4 0 01.55.13l.7 1.12A5 5 0 018 3.1c.55 0 1.07.09 1.55.25l.7-1.12a.4.4 0 11.68.42l-.66 1.06A4.4 4.4 0 0112.5 7H3.5a4.4 4.4 0 012.23-3.29l-.66-1.06a.4.4 0 01.13-.55zM6 5.4a.55.55 0 100 1.1.55.55 0 000-1.1zm4 0a.55.55 0 100 1.1.55.55 0 000-1.1zM3.5 8h9v4.5a1 1 0 01-1 1h-7a1 1 0 01-1-1V8z"/></svg></span><span class="org">DartsAR</span><a class="open" href="https://dartsar.app/" target="_blank" rel="noopener">Visit</a></div></div></article><article class="card"><div class="art fallback shot"><span class="yrs" title="Active years, from the project's commit history">2026</span><img src="/thumbs/geodex.jpg" alt="Geodex" loading="lazy" width="800" height="420"><img class="live-og" data-og="https://geodex.sankhacooray.com/" alt="" width="1200" height="630"></div><div class="cbody"><div class="ctop"><h3>Geodex</h3><span class="role mine">Mine</span></div><p>A treasure hunt for places: walk closer and the static clears, stand on the spot and the art is yours.</p><div class="cfoot"><span class="plats"><svg class="pi pi-web" viewBox="0 0 16 16" role="img" aria-label="Web"><title>Web</title><g fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c1.7 1.8 2.5 3.8 2.5 6S9.7 12.2 8 14M8 2C6.3 3.8 5.5 5.8 5.5 8s.8 4.2 2.5 6"/></g></svg><svg class="pi pi-android" viewBox="0 0 16 16" role="img" aria-label="Android"><title>Android</title><path fill="currentColor" d="M5.2 2.1a.4.4 0 01.55.13l.7 1.12A5 5 0 018 3.1c.55 0 1.07.09 1.55.25l.7-1.12a.4.4 0 11.68.42l-.66 1.06A4.4 4.4 0 0112.5 7H3.5a4.4 4.4 0 012.23-3.29l-.66-1.06a.4.4 0 01.13-.55zM6 5.4a.55.55 0 100 1.1.55.55 0 000-1.1zm4 0a.55.55 0 100 1.1.55.55 0 000-1.1zM3.5 8h9v4.5a1 1 0 01-1 1h-7a1 1 0 01-1-1V8z"/></svg></span><span class="org">Sankha Cooray</span><button class="parts" type="button" aria-label="Parts: Geodex server, Geodex for Android"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>2 parts</button><div class="pop" role="tooltip"><b>Built from</b><ul><li><i>Geodex server <code>geodex-server</code></i><span>Worker + D1, web play and console</span></li><li><i>Geodex for Android <code>geodex-android</code></i><span>Auto-collect app and widget</span></li></ul></div><a class="open" href="https://geodex.sankhacooray.com/" target="_blank" rel="noopener">Open</a></div></div></article><article class="card"><div class="art"><span class="yrs" title="Active years, from the project's commit history">2025–2026</span><img src="/thumbs/stakco-walk.jpg" alt="Stakco on the move" loading="lazy" width="800" height="420"></div><div class="cbody"><div class="ctop"><h3>Stakco on the move</h3><span class="role co">Co-owned</span></div><p>Ring puzzles you solve by moving: each step turns a ring, or face a compass heading to line one up.</p><div class="cfoot"><span class="plats"><svg class="pi pi-web" viewBox="0 0 16 16" role="img" aria-label="Web"><title>Web</title><g fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c1.7 1.8 2.5 3.8 2.5 6S9.7 12.2 8 14M8 2C6.3 3.8 5.5 5.8 5.5 8s.8 4.2 2.5 6"/></g></svg></span><span class="org">Stakco</span><button class="parts" type="button" aria-label="Parts: Stakco Walk, Stakco Azimuth, Stakco Gyro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg>3 parts</button><div class="pop" role="tooltip"><b>Built from</b><ul><li><i>Stakco Walk <code>stakco-walk-html5</code></i><span>Pedometer steps</span></li><li><i>Stakco Azimuth <code>stakco-azimuth-html5</code></i><span>Compass heading</span></li><li><i>Stakco Gyro <code>stakco-gyro-html5</code></i><span>Tilt the phone</span></li></ul></div><a class="open" href="https://stakcos.com/walk/" target="_blank" rel="noopener">Play</a></div></div></article></div>
+  </div>
+    <footer class="footer"><div class="wrap">
+      <span>play · <span class="hide-s">a research hub </span>by Sankha Cooray</span>
+      <a href="https://sankhacooray.com">sankhacooray.com</a>
+      <button class="info" id="roles-info" type="button" aria-label="What Mine, Co-owned and Contributed mean" aria-describedby="roles-msg">i</button>
+    </div></footer>
+  </section>
+
+</main>
+
+<div class="glass" id="glass" role="tooltip"><div class="msg" id="roles-msg"><b>Mine</b>: I built and run it. <b>Co-owned</b>: I share ownership of the project with others. <b>Contributed</b>: the project belongs to another team or organisation (here, the iTiles games at the Augmented Human Lab), and I worked on it. Several repositories are private, so only live sites are linked.</div></div>
+
+<script>
+/* screen-fit + ↑/↓ paging (ui-ux-style rules 1, 2) */
+(function(){
+  var natural=[],scroller=document.body,topbar=document.querySelector(".topbar"),root=document.getElementById("home");
+  function barH(){return topbar?topbar.offsetHeight:0}
+  if(topbar&&window.ResizeObserver)new ResizeObserver(function(){document.documentElement.style.setProperty("--bar-h",barH()+"px")}).observe(topbar);
+  function layout(){
+    var gs=[].slice.call(root.querySelectorAll(".group")),avail=scroller.clientHeight-barH(),keep=scroller.scrollTop;
+    root.style.minHeight=root.offsetHeight+"px";
+    gs.forEach(function(g){g.style.minHeight=""});
+    if(window.innerWidth<=900){gs.forEach(function(g){g.classList.add("screen")});root.style.minHeight="";return}
+    var hs=gs.map(function(g){return g.getBoundingClientRect().height}),screens=[],cur=null;natural=hs;
+    gs.forEach(function(g,i){var solo=g.hasAttribute("data-solo")||(cur&&cur.solo);
+      if(cur&&!solo&&cur.sum+hs[i]<=avail+1){cur.items.push(i);cur.sum+=hs[i]}else{cur={items:[i],sum:hs[i],solo:g.hasAttribute("data-solo")};screens.push(cur)}});
+    screens.forEach(function(sc){var extra=Math.max(0,avail-sc.sum)/sc.items.length;sc.items.forEach(function(i,k){gs[i].style.minHeight=(hs[i]+extra)+"px";gs[i].classList.toggle("screen",k===0)})});
+    root.style.minHeight="";if(scroller.scrollTop!==keep)scroller.scrollTop=keep;
+    if(hashUntil&&!userMoved&&Date.now()<hashUntil)toHash();
+  }
+  var raf=0;function relayout(){cancelAnimationFrame(raf);raf=requestAnimationFrame(layout)}
+  if(window.ResizeObserver)new ResizeObserver(relayout).observe(scroller);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(relayout);
+  window.addEventListener("load",relayout);
+  [].forEach.call(document.images,function(im){if(!im.complete)im.addEventListener("load",relayout,{once:true})});
+  var target=null;scroller.addEventListener("scrollend",function(){target=null});
+  function stops(){return [].map.call(root.querySelectorAll(".screen"),function(s){return Math.round(s.getBoundingClientRect().top+scroller.scrollTop-barH())})}
+  function pageBy(dir){var pos=target!=null?target:scroller.scrollTop,step=scroller.clientHeight-barH(),max=scroller.scrollHeight-scroller.clientHeight,s=stops(),dest;
+    if(dir>0){var nx=s.filter(function(t){return t>pos+4})[0];dest=Math.min(nx!=null?nx:max,pos+step)}else{var pv=s.filter(function(t){return t<pos-4}).pop();dest=Math.max(pv!=null?pv:0,pos-step)}
+    dest=Math.min(Math.max(dest,0),max);if(dest===Math.round(pos))return;target=dest;scroller.scrollTo({top:dest,behavior:"smooth"})}
+  document.addEventListener("keydown",function(e){if(e.key!=="ArrowDown"&&e.key!=="ArrowUp")return;if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey)return;
+    var t=e.target instanceof Element?e.target:null;if(t&&t.closest('input,textarea,select,[role="slider"],[contenteditable]'))return;e.preventDefault();pageBy(e.key==="ArrowDown"?1:-1)});
+  /* deep links (#tiles) land under the app bar once layout settles */
+  function toHash(){var id=location.hash.slice(1);if(!/^[\w-]+$/.test(id))return;var el=document.getElementById(id);if(!el)return;
+    scroller.scrollTop=0;scroller.scrollTo({top:el.getBoundingClientRect().top-barH()})}
+  var hashUntil=location.hash?Date.now()+2500:0,userMoved=false;
+  ["wheel","touchstart","keydown"].forEach(function(ev){window.addEventListener(ev,function(){userMoved=true},{passive:true,once:true})});
+  relayout();
+  /* scrollspy: the topic filling the view is current; on the last screen, the last topic */
+  var links=[].slice.call(document.querySelectorAll('.nav a[href^="#"]')),spyRaf=0;
+  function spy(){spyRaf=0;var line=barH()+(scroller.clientHeight-barH())*0.4,cur=-1;
+    links.forEach(function(a,i){var el=document.querySelector(a.getAttribute("href"));if(el&&el.getBoundingClientRect().top<=line)cur=i});
+    if(scroller.scrollTop>4&&scroller.scrollTop+scroller.clientHeight>=scroller.scrollHeight-2)cur=links.length-1;
+    links.forEach(function(a,i){if(i===cur)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current")})}
+  scroller.addEventListener("scroll",function(){if(!spyRaf)spyRaf=requestAnimationFrame(spy)},{passive:true});
+  window.addEventListener("load",spy);
+  /* in-page links scroll the body scroller */
+  document.addEventListener("click",function(e){var a=e.target.closest('a[href^="#"]');if(!a)return;var el=document.querySelector(a.getAttribute("href"));if(!el)return;e.preventDefault();
+    scroller.scrollTo({top:el.getBoundingClientRect().top+scroller.scrollTop-barH(),behavior:"smooth"})});
+  window.__screenFit={relayout:relayout,layout:layout,pageBy:pageBy,natural:function(){return natural}};
+})();
+/* ambient particles (rule 24): faint game glyphs drifting on a slow random walk */
+(function(){
+  var cv=document.getElementById("bg");if(!cv||!cv.getContext)return;
+  var ctx=cv.getContext("2d"),dpr=1,W=0,H=0,parts=[],color="#6a3fd1",raf=0,last=0;
+  var still=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var P={
+    dice:"M5 4h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zM8.5 8.5h.01M15.5 15.5h.01M12 12h.01",
+    pad:"M7 8h10a5 5 0 0 1 4.6 7l-.5 1.2a2.6 2.6 0 0 1-4.3.6L15 15H9l-1.8 1.8a2.6 2.6 0 0 1-4.3-.6L2.4 15A5 5 0 0 1 7 8zM7 10.5v3M5.5 12h3M16 11h.01M18 13h.01",
+    piece:"M4 7h4.5a2 2 0 1 1 3.5 0H16v4a2 2 0 1 1 0 3.5V19H4v-4.5a2 2 0 1 0 0-3.5z",
+    rings:"M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zM12 3v4M17 12h4",
+    target:"M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM12 12l8-8M17 4h3v3",
+    tile:"M4 4h16v16H4zM8 8h8v8H8z",
+    star:"M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z",
+    pin:"M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11zM12 8a2 2 0 1 0 0 4 2 2 0 0 0 0-4z",
+    heart:"M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"
+  };
+  var paths={};for(var k in P)paths[k]=new Path2D(P[k]);
+  var GLYPHS=["+1","x2","180","Lv 3","GO!","1UP"];
+  var KINDS=Object.keys(P).concat(GLYPHS.map(function(g){return "t:"+g}));
+  function rnd(a,b){return a+Math.random()*(b-a)}
+  function readColor(){var c=getComputedStyle(document.documentElement).getPropertyValue("--accent").trim();if(c)color=c}
+  function make(){var depth=Math.random();return{
+    k:KINDS[(Math.random()*KINDS.length)|0],x:rnd(0,W),y:rnd(0,H),
+    s:18+depth*22,a:.05+depth*.07,dir:rnd(0,Math.PI*2),sp:rnd(.06,.22)*(0.6+depth),
+    r:rnd(0,Math.PI*2),vr:rnd(-.0025,.0025)}}
+  function size(){
+    dpr=Math.min(window.devicePixelRatio||1,2);W=window.innerWidth;H=window.innerHeight;
+    cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+    var want=Math.max(12,Math.min(46,Math.round(W*H/36000)));
+    while(parts.length<want)parts.push(make());parts.length=want;
+    parts.forEach(function(p){if(p.x>W+40)p.x=rnd(0,W);if(p.y>H+40)p.y=rnd(0,H)});
+  }
+  function draw(p){
+    ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);ctx.globalAlpha=p.a;ctx.strokeStyle=color;ctx.fillStyle=color;
+    var sc=p.s/24;
+    if(p.k.indexOf("t:")===0){ctx.font="500 "+Math.round(p.s*.72)+"px 'JetBrains Mono', ui-monospace, monospace";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(p.k.slice(2),0,0)}
+    else{ctx.scale(sc,sc);ctx.translate(-12,-12);ctx.lineWidth=1.5/sc*1.1;ctx.lineCap="round";ctx.lineJoin="round";
+      if(p.k==="rings")ctx.setLineDash([3,2.5]);ctx.stroke(paths[p.k])}
+    ctx.restore()}
+  function frame(t){
+    var dt=last?Math.min(48,t-last)/16.7:1;last=t;
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<parts.length;i++){var p=parts[i];
+      p.dir+=rnd(-.03,.03)*dt;p.x+=Math.cos(p.dir)*p.sp*dt;p.y+=Math.sin(p.dir)*p.sp*dt;p.r+=p.vr*dt;
+      var m=p.s;if(p.x<-m)p.x=W+m;else if(p.x>W+m)p.x=-m;if(p.y<-m)p.y=H+m;else if(p.y>H+m)p.y=-m;
+      draw(p)}
+    raf=requestAnimationFrame(frame)}
+  function start(){cancelAnimationFrame(raf);last=0;if(still){ctx.clearRect(0,0,W,H);parts.forEach(draw)}else raf=requestAnimationFrame(frame)}
+  readColor();size();start();
+  window.addEventListener("resize",function(){size();if(still)start()});
+  document.addEventListener("visibilitychange",function(){if(document.hidden)cancelAnimationFrame(raf);else start()});
+  new MutationObserver(function(){readColor();if(still)start()}).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+  if(window.matchMedia)window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",function(){readColor();if(still)start()});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){if(still)start()});
+})();
+/* live share images: fetch each project's current og:image via the Worker; fallback art stays on failure */
+(function(){
+  [].forEach.call(document.querySelectorAll("img.live-og[data-og]"),function(img){
+    var box=img.parentNode;
+    img.addEventListener("load",function(){if(img.naturalWidth>0)box.classList.add("loaded")});
+    img.addEventListener("error",function(){img.remove()});
+    img.src="/api/og?url="+encodeURIComponent(img.getAttribute("data-og"));
+  });
+})();
+/* parts chips: tap toggles on touch; Esc or a tap elsewhere closes */
+(function(){document.addEventListener("click",function(e){var p=e.target.closest(".parts");[].forEach.call(document.querySelectorAll(".parts.on"),function(x){if(x!==p)x.classList.remove("on")});if(p)p.classList.toggle("on")});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")[].forEach.call(document.querySelectorAll(".parts.on"),function(x){x.classList.remove("on")})})})();
+/* ⓘ: full-screen frosted note while hovering; tap toggles on touch (rule 18) */
+(function(){
+  var b=document.getElementById("roles-info"),g=document.getElementById("glass");if(!b||!g)return;
+  /* hover intent: open only after the pointer rests on the ⓘ, so passing over it does nothing */
+  var DELAY=400,timer=0;
+  function on(){clearTimeout(timer);g.classList.add("on")}function off(){clearTimeout(timer);g.classList.remove("on")}
+  function later(){clearTimeout(timer);timer=setTimeout(on,DELAY)}
+  b.addEventListener("mouseenter",later);b.addEventListener("mouseleave",off);b.addEventListener("focus",later);b.addEventListener("blur",off);
+  b.addEventListener("click",function(e){e.stopPropagation();g.classList.toggle("on")});
+  document.addEventListener("click",function(e){if(e.target!==b)off()});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")off()});
+})();
+/* theme toggle shared with the sankhacooray.com family */
+(function(){var r=document.documentElement,K="sc-theme",mq=window.matchMedia("(prefers-color-scheme: dark)");function eff(){try{var s=localStorage.getItem(K);if(s==="light"||s==="dark")return s}catch(e){}return mq.matches?"dark":"light"}
+  var b=document.getElementById("theme-toggle");if(!b)return;
+  function label(){var l="Switch to "+(eff()==="dark"?"light":"dark")+" theme";b.setAttribute("aria-label",l);b.title=l}
+  label();if(mq.addEventListener)mq.addEventListener("change",label);
+  b.addEventListener("click",function(){var n=eff()==="dark"?"light":"dark";try{localStorage.setItem(K,n)}catch(e){}r.setAttribute("data-theme",n);label()})})();
+</script>
+<script async src="https://sankhacooray.com/js/sankha-analytics.js"></script>
+</body>
+</html>

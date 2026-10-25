@@ -1,0 +1,254 @@
+{
+  "roles": {
+    "mine": "Mine",
+    "co": "Co-owned",
+    "contrib": "Contributed"
+  },
+  "groups": [
+    {
+      "id": "puzzles",
+      "nav": "Puzzle design",
+      "title": "Rotating ring puzzles",
+      "lede": "Stacked rings that turn on their own: line them up to bring the picture back, on paper, a phone or a watch.",
+      "context": "Stakco · Clock Puzzles",
+      "projects": [
+        {
+          "name": "Stakco Play",
+          "desc": "Daily ring puzzles in the browser and on Android: drag to turn a layer, double-tap to switch, beat the clock.",
+          "plat": [
+            "web",
+            "android"
+          ],
+          "role": "co",
+          "org": "Stakco",
+          "thumb": "stakco-play.jpg",
+          "url": "https://play.stakcos.com/",
+          "urlLabel": "Play",
+          "years": "2023–2026",
+          "parts": [
+            {
+              "name": "Stakco Play",
+              "kind": "Web app, play.stakcos.com",
+              "repo": "stakco-play-html5"
+            },
+            {
+              "name": "Stakco Play for Android",
+              "kind": "Native Android app",
+              "repo": "stakco-play-android"
+            },
+            {
+              "name": "Stakco simulator",
+              "kind": "First version, Unity WebGL, 2023–2025",
+              "repo": "stakco-simulator-unity"
+            },
+            {
+              "name": "Audio puzzle",
+              "kind": "Prototype: turn waveforms into sync",
+              "repo": "stakco-audio-html5"
+            },
+            {
+              "name": "Stakco launcher",
+              "kind": "Home for every Stakco app",
+              "repo": "stakco-launcher-html5"
+            }
+          ]
+        },
+        {
+          "name": "Stakco Watch",
+          "desc": "Ring puzzles on the wrist: turn the Galaxy Watch bezel to rotate a layer until the face lines up.",
+          "plat": [
+            "watch"
+          ],
+          "role": "co",
+          "org": "Stakco",
+          "thumb": "stakco-watch.jpg",
+          "years": "2024–2025",
+          "parts": [
+            {
+              "name": "Stakco for Galaxy Watch",
+              "kind": "Wear OS app, bezel control",
+              "repo": "stakco-play-galaxy"
+            },
+            {
+              "name": "Stakco watch faces",
+              "kind": "Unity scenes and Galaxy Watch build",
+              "repo": "stakco-watch-unity"
+            },
+            {
+              "name": "Watch-face simulator",
+              "kind": "Web prototype",
+              "repo": "stakco-watch-html5"
+            }
+          ]
+        },
+        {
+          "name": "Clock Puzzles",
+          "desc": "Multi-layer rotating puzzles that reveal artwork: play online free, or order a printed copy.",
+          "plat": [
+            "web"
+          ],
+          "org": "Clock Puzzles",
+          "thumb": "clockpuzzle.jpg",
+          "url": "https://clockpuzzle.com/",
+          "years": "2026",
+          "parts": [
+            {
+              "name": "Clock Puzzles",
+              "kind": "Shop and play site",
+              "repo": "clockpuzzle-com"
+            },
+            {
+              "name": "Orders API",
+              "kind": "Stripe checkout",
+              "repo": "api-clockpuzzle-com"
+            },
+            {
+              "name": "CDN",
+              "kind": "Artwork host",
+              "repo": "cdn-clockpuzzle-com"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "embodied",
+      "nav": "Embodied play",
+      "title": "Games on the floor",
+      "lede": "Interactive floor tiles that light, sound and buzz: you play by stepping, tapping and shaking them.",
+      "context": "iTiles · Stakco · Kiwrious",
+      "projects": [
+        {
+          "name": "iTiles Games",
+          "desc": "Memory, Chasing Lights and Music Orchestration for the iTiles floor tiles, in Unity and now the browser.",
+          "plat": [
+            "web"
+          ],
+          "role": "contrib",
+          "org": "Augmented Human Lab",
+          "thumb": "itiles-games.jpg",
+          "years": "2023–2026",
+          "parts": [
+            {
+              "name": "iTiles app",
+              "kind": "Original Unity games app, 2023–2024",
+              "repo": "itiles-app-unity"
+            },
+            {
+              "name": "iTiles Games for the web",
+              "kind": "Browser port, Web Bluetooth",
+              "repo": "itiles-app-html5"
+            }
+          ]
+        },
+        {
+          "name": "Stakco iTiles",
+          "desc": "A Stakco ring puzzle you solve on foot: each tile you touch picks a layer or turns it.",
+          "plat": [
+            "web"
+          ],
+          "role": "co",
+          "org": "Stakco",
+          "thumb": "stakco-itiles.jpg",
+          "url": "https://stakcos.com/itiles/play/",
+          "urlLabel": "Play",
+          "years": "2025"
+        },
+        {
+          "name": "Kiwrious + iTiles",
+          "desc": "Science sensors drive the tiles: heart-rate challenges, UV alerts and temperature colour maps.",
+          "plat": [
+            "web"
+          ],
+          "role": "co",
+          "org": "Stakco",
+          "thumb": "kiwrious-itiles.jpg",
+          "url": "https://stakcos.com/kiwrious-itiles/",
+          "years": "2025"
+        }
+      ]
+    },
+    {
+      "id": "pervasive",
+      "nav": "Pervasive games",
+      "title": "Games in the world around you",
+      "lede": "Play that leaves the screen: a dartboard in your room, art hidden at real places, and puzzles you turn by walking.",
+      "context": "DartsAR · Geodex · Stakco",
+      "projects": [
+        {
+          "name": "DartsAR",
+          "desc": "Augmented-reality darts for iPhone and Android: a virtual board in your room, multiplayer, leg by leg.",
+          "plat": [
+            "ios",
+            "android"
+          ],
+          "role": "mine",
+          "org": "DartsAR",
+          "thumb": "dartsar.jpg",
+          "url": "https://dartsar.app/",
+          "urlLabel": "Visit",
+          "years": "2018–2020"
+        },
+        {
+          "name": "Geodex",
+          "desc": "A treasure hunt for places: walk closer and the static clears, stand on the spot and the art is yours.",
+          "plat": [
+            "web",
+            "android"
+          ],
+          "role": "mine",
+          "org": "Sankha Cooray",
+          "og": "https://geodex.sankhacooray.com/",
+          "url": "https://geodex.sankhacooray.com/",
+          "years": "2026",
+          "parts": [
+            {
+              "name": "Geodex server",
+              "kind": "Worker + D1, web play and console",
+              "repo": "geodex-server"
+            },
+            {
+              "name": "Geodex for Android",
+              "kind": "Auto-collect app and widget",
+              "repo": "geodex-android"
+            }
+          ],
+          "thumb": "geodex.jpg"
+        },
+        {
+          "name": "Stakco on the move",
+          "desc": "Ring puzzles you solve by moving: each step turns a ring, or face a compass heading to line one up.",
+          "plat": [
+            "web"
+          ],
+          "role": "co",
+          "org": "Stakco",
+          "thumb": "stakco-walk.jpg",
+          "url": "https://stakcos.com/walk/",
+          "urlLabel": "Play",
+          "years": "2025–2026",
+          "parts": [
+            {
+              "name": "Stakco Walk",
+              "kind": "Pedometer steps",
+              "repo": "stakco-walk-html5"
+            },
+            {
+              "name": "Stakco Azimuth",
+              "kind": "Compass heading",
+              "repo": "stakco-azimuth-html5"
+            },
+            {
+              "name": "Stakco Gyro",
+              "kind": "Tilt the phone",
+              "repo": "stakco-gyro-html5"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "yearsNote": "From each project's git history (first to last commit). Stakco Play includes the Unity simulator from 2023; Stakco Watch runs from the first watch-face commits (Feb 2024) to the Galaxy Watch app (Oct 2025); DartsAR uses 2018–2020, the years the game was out (the site repo's 2026 commit only moved its domain); stakco-play-android and stakco-audio-html5 have no git history and fall inside the Stakco Play range.",
+  "thumbsNote": "Geodex loads its current og:image live through the Worker (/api/og), over a screenshot until it arrives. The rest use screenshots of the live sites (800×420). Stakco Watch and Stakco iTiles are drawn from og/thumbs.html: the watch is the watch-face prototype, the iTiles page needs real tiles to show a puzzle. Clock Puzzles' og:image currently 404s, so it uses a screenshot.",
+  "cardsNote": "Cards show only things people use. Backends, earlier versions, prototypes and other platforms are listed as parts of their product (hover the parts chip). Clock Puzzles has no role chip: its repositories belong to the Clock Puzzles account and the role isn't recorded. Left out: Gyro Shapes (shadow-play-html5) and Magic Bells (compass-driven music box) are toys rather than games, so they belong in sense / music; Kiwrious Play (play.kiwrious.com) is block programming for children and sits in learn."
+}
