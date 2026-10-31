@@ -39,16 +39,32 @@ def kind(p):
     return "browser" if "web" in p["plat"] else "service"
 
 
+def thumb(p):
+    """<img> for a card screenshot; WebP 480/800 srcset when public/thumbs/<name>.webp exists, else the JPG."""
+    name = p["thumb"]
+    stem = os.path.splitext(name)[0]
+    attrs = f'alt="{e(p["name"])}" loading="lazy" decoding="async" width="800" height="420"'
+    if os.path.exists(os.path.join(HERE, "public", "thumbs", stem + ".webp")):
+        return (f'<img src="/thumbs/{e(stem)}-480.webp" srcset="/thumbs/{e(stem)}-480.webp 480w, /thumbs/{e(stem)}.webp 800w" '
+                f'sizes="(max-width: 700px) 92vw, (max-width: 1100px) 46vw, 25vw" {attrs}>')
+    return f'<img src="/thumbs/{e(name)}" {attrs}>'
+
+
+def cards_html(projects, n):
+    """A row of cards; the thumbnail `sizes` hint matches the row's column count (--n)."""
+    return "".join(card(p) for p in projects).replace(', 25vw"', f', {100 // max(1, min(n, 4))}vw"')
+
+
 def card(p):
     if p.get("og") and p.get("thumb"):
         # screenshot first, then the site's current share image fades in over it
-        art = (f'<div class="art fallback shot"><img src="/thumbs/{e(p["thumb"])}" alt="{e(p["name"])}" loading="lazy" width="800" height="420">'
+        art = (f'<div class="art fallback shot">{thumb(p)}'
                f'<img class="live-og" data-og="{e(p["og"])}" alt="" width="1200" height="630"></div>')
     elif p.get("og"):
         art = (f'<div class="art fallback" aria-hidden="true">{KIND[kind(p)]}'
                f'<img class="live-og" data-og="{e(p["og"])}" alt="" width="1200" height="630"></div>')
     elif p.get("thumb"):
-        art = f'<div class="art"><img src="/thumbs/{e(p["thumb"])}" alt="{e(p["name"])}" loading="lazy" width="800" height="420"></div>'
+        art = f'<div class="art">{thumb(p)}</div>'
     else:
         art = f'<div class="art blank" aria-hidden="true">{KIND[kind(p)]}</div>'
     if p.get("years"):
@@ -85,7 +101,7 @@ for i, g in enumerate(data["groups"]):
     cls = "group" + (" last" if last else "")
     n = len(g["projects"])
     groups.append(f'  <section class="{cls}" id="{g["id"]}"><div class="wrap">\n    {head(g)}\n'
-                  f'    <div class="cards" style="--n:{n}">{"".join(card(p) for p in g["projects"])}</div>\n'
+                  f'    <div class="cards" style="--n:{n}">{cards_html(g["projects"], n)}</div>\n'
                   f'  </div>\n{FOOTER if last else ""}  </section>')
     nav.append(f'<a href="#{g["id"]}">{e(g.get("nav", g["title"]))}</a>')
 
